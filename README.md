@@ -1,6 +1,3 @@
-# PortfolioDN1
+# Portfolio
 
-- tester le prtfolio:
-https://clarajacquemoud-prof.github.io/PortfolioDN1/
 
-- https://flexboxfroggy.com/#fr
