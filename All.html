@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+
+<head> <!-- On renseigne ici des information qui ne seront pas affichées à l'écran -->
+  <meta charset="utf-8"> <!-- encodage des caractères -->
+  <title>Projets - Portfolio</title> <!-- Titre de la page qu'affiche l'onglet du navigateur et google -->
+
+  <!-- pour les mobiles -->
+  <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale=1.0" />
+
+  <!-- lien vers des feuilles de styles -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/all.css">
+  
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- lien vers un ou plusieurs scripts -->
+    <script src="js/jquery-3.7.1.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="js/script2.js" defer></script> 
+  <script src="js/map.js"></script>
+</head>
+
+
+<body>
+  <div class="loading">Chargement du carrousel...</div>
+
+  <header id="header">
+    <div class="wrapper">
+      <ul class="main-nav nav-left">
+        <li><a href="index.html">Manon C-M</a></li>
+      </ul>
+
+      <div class="menu-toggle">
+        <span class="menu-text">MENU</span>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="overlay"></div>
+
+  <div class="menu-container">
+    <div class="menu-links">
+      <div class="link menu-link-1">
+        <a href="All.html">PROJETS</a>
+      </div>
+  <ul class="sous-nav">
+  <li><a href="All.html?filter=concept art">CONCEPT ART</a></li>
+  <li><a href="All.html?filter=animation">ANIMATION</a></li>
+  <li><a href="All.html?filter=3D">3D</a></li>
+  <li><a href="All.html?filter=sketchbook">SKETCHBOOK</a></li>
+  <li><a href="All.html?filter=autres">AUTRES COMPÉTENCES CRÉATIVES</a></li>
+</ul>
+      
+      <div class="link menu-link-2">
+        <a href="/index.html#Apropos">A PROPOS</a>
+      </div>
+      <div class="link menu-link-3">
+        <a href="/index.html#Contacts">CONTACTS</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-wrapper">
+    <canvas></canvas>
+  </div>
+
+  <div class="filters">
+    
+    <label><input type="checkbox" value="concept art"> Concept Art</label>
+    <label><input type="checkbox" value="animation"> Animation</label>
+    <label><input type="checkbox" value="3D"> 3D</label>
+    <label><input type="checkbox" value="sketchbook"> Sketchbook</label>
+    <label><input type="checkbox" value="autres"> Autres</label>
+  </div>
+
+  <ul class="slides-list" id="slides-data">
+    <li data-category="sketchbook">
+      <a href="projet_1.html">
+        <img src="img/projet 1/coquillage2.jpg" alt="Projet 1">
+        <span class="title">DESSINS <br> D'OBSERVATION</span>
+        <span class="subtitle">Sketchbook</span>
+      </a>
+    </li>
+    <li data-category="animation,concept art">
+      <a href="projet_2.html">
+<video src="img/projet 2/extraitP.mp4" autoplay muted loop playsinline disablepictureinpicture></video>
+        <span class="title">VALDRADA</span>
+        <span class="subtitle">Concept Art - Animation</span>
+      </a>
+    </li>
+    <li data-category="animation,concept art">
+      <a href="projet_3.html">
+        <video src="img/projet 3/escargot ancien final.mp4" autoplay muted loop playsinline disablepictureinpicture></video>
+        <span class="title">ESCARGOT AMBULANT</span>
+        <span class="subtitle">Concet Art - Animation</span>
+      </a>
+    </li>
+    <li data-category="concept art,3D,autres">
+      <a href="projet_4.html">
+        <video src="img/projet 4/V1 jeu.mp4" autoplay muted loop playsinline disablepictureinpicture></video>
+        <span class="title">SAUVE QUI POULE</span>
+        <span class="subtitle">Concept Art - 3D - Jeu Vidéo</span>
+      </a>
+    </li>
+    <li data-category="concept art,3D,animation">
+      <a href="projet_5.html">
+        <video src="img/projet 5/spider-4.mp4" autoplay muted loop playsinline disablepictureinpicture></video>
+        <span class="title">MÉCA-RACHNÉE</span>
+        <span class="subtitle">Concept Art - 3D - Animation</span>
+      </a>
+    </li>
+    <li data-category="animation,autres">
+      <a href="projet_6.html">
+        <video src="img/projet 6/extrait4.mp4" autoplay muted loop playsinline disablepictureinpicture></video>
+        <span class="title">RUNNING CAT</span>
+        <span class="subtitle">Animation - Motion Design</span>
+      </a>
+    </li>
+    <li data-category="autres,animation">
+      <a href="projet_7.html">
+        <video src="img/projet 7/extraitSM2.mp4" autoplay muted loop playsinline disablepictureinpicture></video>
+        
+        <span class="title">GOBE MOUCHE</span>
+        <span class="subtitle">Modelage - Stop Motion - Animation</span>
+      </a>
+    </li>
+  
+
+      <li data-category="sketchbook,autres">
+      <a href="projet_8.html">
+        <img src="img/projet 8/paysage 1.jpg" alt="Projet 8">
+        <span class="title">PAYSAGE IMMERSIF</span>
+        <span class="subtitle">Sketchbook - VR</span>
+      </a>
+    </li>
+
+    
+  </ul>
+
+  <footer>
+    <p>PROJETS</p>
+  </footer>
+
+</body>

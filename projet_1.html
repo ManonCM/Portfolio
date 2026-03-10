@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="fr">
+
+<head> <!-- On renseigne ici des information qui ne seront pas affichées à l'écran -->
+  <meta charset="utf-8"> <!-- encodage des caractères -->
+  <title>Dessins d'observation - Portfolio</title> <!-- Titre de la page qu'affiche l'onglet du navigateur et google -->
+
+  <!-- pour les mobiles -->
+  <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale=1.0" />
+
+  <!-- lien vers des feuilles de styles -->
+  <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/projet1.css">
+  
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- lien vers un ou plusieurs scripts -->
+    <script src="js/jquery-3.7.1.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="js/script4.js" defer></script> 
+  <script src="js/map.js"></script>
+</head>
+
+
+
+<body> <!-- les éléments contenus dans le body seront affichés -->
+  <header id="header">
+     
+  <div class="wrapper">
+    <ul class="main-nav nav-left">
+      <li><a href="index.html">Manon C-M</a></li>
+    </ul>
+
+    <div class="menu-toggle">
+      <span class="menu-text">MENU</span>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <div class="menu-container">
+   
+    <div class="menu-links">
+      <div class="link menu-link-1">
+        <a href="All.html">PROJETS</a>
+        </div>
+  <ul class="sous-nav">
+  <li><a href="All.html?filter=concept art">CONCEPT ART</a></li>
+  <li><a href="All.html?filter=animation">ANIMATION</a></li>
+  <li><a href="All.html?filter=3D">3D</a></li>
+  <li><a href="All.html?filter=sketchbook">SKETCHBOOK</a></li>
+  <li><a href="All.html?filter=autres">AUTRES COMPÉTENCES CRÉATIVES</a></li>
+</ul>
+      
+      <div class="link menu-link-2">
+         <a href="/index.html#Apropos">A PROPOS</a>
+      </div>
+      <div class="link menu-link-3">
+        <a href="/index.html#Contacts">CONTACTS</a>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<div class="close"><a href="All.html" class="close-btn"></a></div>
+
+
+<div class="main">
+      <h1>DESSINS D'OBSERVATION</h1>
+          <!-- FULL WIDTH IMAGE -->
+    <div class="full-width-media">
+     <img src="./img/projet 1/coquillage2.jpg" alt=""> 
+    </div>
+      <div class="categories">
+        <a href="All.html?filter=sketchbook">SKETCHBOOK</a>
+        
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="description-block">
+      <p>
+       Rassemblement de croquis et de dessins d'observation<br>
+       réalisés à l'aide de différentes techniques et médiums, représentant animaux, environnements, statues, objets...
+        permettant une réelle étude et compréhension des formes, des volumes, de la perspective et des couleurs.
+      </p>
+
+    </div>
+
+
+
+    <!-- CAROUSEL 1 -->
+    <div class="carousel-container fit-height">
+      <div class="carousel-label">CARNET DE CROQUIS (crayon, fusain, stylo)</div>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" onclick="slideCarousel('carousel1', -1)">
+           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <div class="carousel" id="carousel1">
+                
+          <div class="carousel-item"><img src="img/projet 1/sketch11.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch12.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch4.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch5.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch9.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch13.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch8.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch14.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch3.png" alt=""></div>
+        </div>
+        <button class="carousel-btn next" onclick="slideCarousel('carousel1', 1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+         
+      </div>
+    </div>
+
+        <!-- CAROUSEL 2 -->
+    <div class="carousel-container fit-width">
+      <div class="carousel-label">CARNET DE CROQUIS (crayon)</div>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" onclick="slideCarousel('carousel2', -1)">
+           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <div class="carousel" id="carousel2">
+                
+          <div class="carousel-item"><img src="img/projet 1/sketch1.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch10.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch2.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch7.png" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/sketch6.png" alt=""></div>
+        </div>
+        <button class="carousel-btn next" onclick="slideCarousel('carousel2', 1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+         
+      </div>
+    </div>
+
+ <!-- TWO COLUMN LAYOUT -->
+  
+<div class="two-column-wrapper">
+  <div class="carousel-label" >BANANES (crayon, feutre acrylic)</div>
+  <div class="two-column">
+    <div class="two-column-item"><img src="img/projet 1/banane1.jpg" alt=""></div>
+    <div class="two-column-item"><img src="img/projet 1/banane2.jpg" alt=""></div>
+  </div>
+</div>
+
+    <!-- CAROUSEL 3 -->
+    <div class="carousel-container carousel-coquillages">
+      <div class="carousel-label">COQUILLAGES (liner fin, crayon, feutre acrylic)</div>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" onclick="slideCarousel('carousel3', -1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+               
+        <div class="carousel" id="carousel3">
+          <div class="carousel-item"><img src="img/projet 1/coquillage1.jpg" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/coquillage2.jpg" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/coquillage3.jpg" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/coquillage4.jpg" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/coquillage5.jpg" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/coquillage6.jpg" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/coquillage7.jpg" alt=""></div>
+        </div>
+        <button class="carousel-btn next" onclick="slideCarousel('carousel3', 1)">
+           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+                
+      </div>
+    </div>
+
+
+
+        <!-- ONE COLUMN LAYOUT -->
+<div class="one-column-item-wrapper">
+  <div class="one-column">
+    
+    <div class="carousel-label">ESCARGOT (pastel blanche, 50x50cm)</div>
+    <div class="one-column-item">
+      <img src="img/projet 1/escargot.jpg" alt=""></video>
+    </div>
+  </div>
+</div>
+
+        <!-- CAROUSEL 4 -->
+    <div class="carousel-container">
+      <div class="carousel-label">PAPIERS FROISSÉS (fusain)</div>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" onclick="slideCarousel('carousel4', -1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+               
+        <div class="carousel" id="carousel4">
+          <div class="carousel-item"><img src="img/projet 1/papier1.jpg" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/papier2.jpg" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/papier3.jpg" alt=""></div>
+          <div class="carousel-item"><img src="img/projet 1/papier4.jpg" alt=""></div>
+        </div>
+        <button class="carousel-btn next" onclick="slideCarousel('carousel4', 1)">
+           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+                
+      </div>
+    </div>
+
+<div class="project-navigation">
+  <a href="projet_8.html" class="nav-project nav-prev">
+    <div class="arrow-container">
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+    </div>
+    <div class="project-info">
+      <span class="label">PROJET PRÉCÉDENT</span>
+      <span class="project-name">PAYSAGE IMMERSIF</span>
+    </div>
+  </a>
+
+  <a href="projet_2.html" class="nav-project nav-next">
+    <div class="project-info">
+      <span class="label">PROJET SUIVANT</span>
+      <span class="project-name">VALDRADA</span>
+    </div>
+    <div class="arrow-container">
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </div>
+  </a>
+</div>
+
+             <footer id="Contacts" class="footer">
+               <div class="contact">
+                 <a href="mailto:manoncarrier-montel@ensaama.net">
+                   <ion-icon name="mail-outline">
+
+                   </ion-icon></a> <span>manon.carrier-montel@ensaama.net</span>
+                   </div> 
+                   <!--<div class="contact"> 
+                    <a href="https://wa.me/33782890907">
+                     <ion-icon name="logo-whatsapp">
+
+                     </ion-icon>
+                    </a> 
+                     <span>+33 7 82 89 09 07</span>
+                     </div> 
+                     <div class="contact"> 
+                      <a href="https://www.instagram.com/mcm.1902/" target="_blank">
+                         <ion-icon name="logo-instagram"></ion-icon>
+                         </a>
+                          <span>mcm.1902</span>
+                         </div>-->
+                         </footer>
+
+</body>

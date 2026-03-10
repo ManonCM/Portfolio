@@ -1,0 +1,593 @@
+
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  font-family: 'hubot';
+  overflow: hidden;
+  background: #141414;
+}
+
+header {
+  top: 0;
+  width: 100%;
+  position: sticky;
+  z-index: 30;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eceae9;
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+
+}
+
+.main-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s ease;
+}
+
+.main-nav li a {
+  color: #141414;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'hubot';
+  transition: 0.3s ease;
+}
+
+.main-nav :hover{
+  font-weight: 700;
+  transform: translateX(5px);
+  transition: 0.3s ease;
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateX(-5px);
+ .menu-text{
+  font-weight: 600;
+ }
+
+ .hamburger span {
+  height: 4px;
+ }
+
+}
+
+.menu-toggle .menu-text {
+  color: #141414;
+  
+  font-size: 18px;
+  font-family: 'hubot';
+  font-weight: 400;
+  transition: 0.3s ease;
+}
+
+
+.hamburger {
+  position: relative;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+  
+}
+
+.hamburger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #141414;
+  border-radius: 2px;
+  transition: 0.3s ease;
+  z-index: 40;
+}
+
+/* position des 3 barres au repos */
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* état actif = croix */
+.hamburger.active span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.menu-container {
+  position: fixed;
+  width: 45%;
+  height: 100vh;
+  top: 0;
+  right: -100%;
+  z-index: 29;
+  background-color: #eceae9;
+  transition: right 0.6 ease-in-out;
+
+  padding: 40px;
+}
+
+.menu-container.active {
+  right: 0;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.menu-links .link {
+  margin: 35px 0;
+  
+  text-align: right;
+  position: relative;
+   display: inline-block; /* le ::before suivra alors la largeur du mot */
+  
+}
+
+.menu-links .link::before {
+  content: "";
+  position: absolute;
+  top: 50%;          /* aligné verticalement avec le texte */
+  left: 0;           /* commence tout à gauche */
+  right: 0;          /* prend toute la largeur */
+  height: 2px;
+  background: #141414;
+}
+
+/* on ajoute un fond derrière le texte pour "casser" la ligne */
+.menu-links .link > a {
+  position: relative;
+  background-color: #eceae9; /* même couleur que le fond du menu */
+  padding-left: 10px;        /* petit espace à gauche du texte */
+}
+
+/* --- TITRES PRINCIPAUX --- */
+.menu-links .link > a {
+  font-size: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #141414;
+  font-family: 'hubot';
+  display: inline-block;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.menu-links .link > a:hover{
+ transform: translateX(-30px);
+ font-weight: 700;
+}
+
+/* Traits horizontaux avant et après */
+
+
+/* Trait vertical pour la sous-nav */
+
+
+.sous-nav::after {
+  content: "";
+  position: absolute;
+  top:0; /* commence juste sous le texte principal */
+  right: 15px;
+  height: calc(100%); /* ajuste pour couvrir toute la sous-nav */
+  width: 2px;
+  background: #141414;
+}
+
+/* --- SOUS MENU --- */
+.sous-nav {
+  position: relative;
+  list-style: none;
+  margin-top: -30px;
+  margin-bottom:30px ;
+  padding-right: 35px;
+  
+}
+
+.sous-nav li {
+  margin: 40px 0;
+  padding: auto;
+  text-align: right;
+}
+
+.sous-nav a {
+  font-size: 25px;
+  font-weight: 300;
+  text-decoration: none;
+  color: #141414;
+  font-family: 'hubot';
+  transition: 0.3s ease;
+}
+
+.sous-nav a:hover {
+  transform: translateX(-50px);
+ font-weight: 600;
+ 
+}
+
+/* --- ESPACEMENT BAS POUR CONTACTS --- */
+.menu-link-3 {
+  margin-top: auto;
+}
+
+/* Overlay pour fermer au clic */
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden; /* GSAP bascule avec autoAlpha */
+  z-index: 25;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLETTE (≤ 1024px)
+───────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .menu-container {
+        width: 60%;
+    }
+
+    .social-media {
+        width: 60%;
+    }
+
+    .menu-links .link > a {
+        font-size: 42px;
+    }
+
+    .sous-nav a {
+        font-size: 22px;
+    }
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE (≤ 768px)
+───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+    /* Header */
+    .wrapper {
+        padding: 16px 20px;
+    }
+
+    .main-nav li a {
+        font-size: 15px;
+    }
+
+    .menu-toggle .menu-text {
+        font-size: 15px;
+    }
+
+    /* Panneau plein écran sur mobile */
+    .menu-container {
+        width: 100%;
+        padding: 80px 28px 40px 28px;
+    }
+
+    .social-media {
+        width: 100%;
+        bottom: 24px;
+    }
+
+    /* Liens principaux */
+    .menu-links .link {
+        margin: 22px 0;
+    }
+
+    .menu-links .link > a {
+        font-size: clamp(28px, 9vw, 44px);
+    }
+
+    .menu-links .link > a:hover {
+        transform: translateX(-16px); /* déplacement réduit sur mobile */
+    }
+
+    /* Sous-menu */
+    .sous-nav {
+        margin-top: -18px;
+        margin-bottom: 18px;
+        padding-right: 24px;
+    }
+
+    .sous-nav li {
+        margin: 24px 0;
+    }
+
+    .sous-nav a {
+        font-size: clamp(16px, 5vw, 22px);
+    }
+
+    .sous-nav a:hover {
+        transform: translateX(-24px);
+    }
+
+    /* Social */
+    .social-media .link a {
+        margin: 12px;
+    }
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TRÈS PETIT MOBILE (≤ 390px)
+───────────────────────────────────────── */
+
+@media (max-width: 390px) {
+
+    .wrapper {
+        padding: 14px 16px;
+    }
+
+    .menu-toggle .menu-text {
+        font-size: 13px;
+    }
+
+    .hamburger {
+        width: 22px;
+        height: 17px;
+    }
+
+    .menu-container {
+        padding: 70px 20px 32px 20px;
+    }
+
+    .menu-links .link > a {
+        font-size: clamp(24px, 10vw, 36px);
+    }
+
+    .sous-nav a {
+        font-size: clamp(14px, 5.5vw, 18px);
+    }
+
+    .social-media {
+        bottom: 16px;
+    }
+
+    .social-media .link a {
+        margin: 8px;
+    }
+}
+
+.slider-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease;
+}
+
+canvas.fade-out {
+  opacity: 0;
+}
+
+canvas.fade-in {
+  opacity: 1;
+}
+.filters {
+  position: fixed;
+  right: 5vw;
+  top: 25%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 1em 1.5em;
+  
+  color: #eceae9;
+  backdrop-filter: blur(8px);
+  min-width: fit-content;
+  width:13%;
+}
+
+.filters label {
+  margin-bottom: 0.4em;
+  font-size: clamp(18px, 1.7vw, 24px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.filters label:hover {
+  font-weight: 500;
+  transform: translateX(-5px);
+}
+
+.filters input[type="checkbox"] {
+  margin-right: 0.6vw;
+  accent-color: #eceae9;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  z-index: 2;
+  color: #eceae9;
+  font-weight: 400;
+  font-size: clamp(16px, 1.5vw, 22px);
+}
+
+#slides-data {
+  display: none;
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eceae9;
+  font-size: clamp(18px, 1.5vw, 22px);
+  z-index: 10;
+  font-family: 'hubot';
+  font-weight: 300;
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLETTE (≤ 1024px)
+───────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+
+    .filters {
+        width: 18%;
+        right: 3vw;
+    }
+
+    .filters label {
+        font-size: clamp(14px, 1.5vw, 20px);
+    }
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE (≤ 768px)
+───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+    /* Menu panneau plein écran */
+    .menu-container {
+        width: 100%;
+        right: -100%;
+    }
+
+    /* Filtres : barre horizontale en bas, au-dessus du footer */
+    .filters {
+        position: fixed;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        top: auto;
+        bottom: 48px; /* au-dessus du footer */
+        width: calc(100vw - 32px);
+        max-width: 480px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 14px;
+        
+        background: rgba(20, 20, 20, 0.92);
+    }
+
+    .filters label {
+        font-size: 13px;
+        margin-bottom: 0;
+        padding: 4px 10px;
+        border: 1px solid rgba(236, 234, 233, 0.25);
+        
+        white-space: nowrap;
+        transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .filters label:hover {
+        transform: none;
+        font-weight: 300;
+    }
+
+    /* Coche + label visuellement fusionnés */
+    .filters input[type="checkbox"] {
+        margin-right: 5px;
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Label coché → fond léger */
+    .filters input[type="checkbox"]:checked + span,
+    .filters label:has(input:checked) {
+        background: rgba(236, 234, 233, 0.15);
+        border-color: #eceae9;
+        font-weight: 500;
+    }
+
+    footer {
+        font-size: 13px;
+        padding: 0.6em 1em;
+    }
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TRÈS PETIT MOBILE (≤ 390px)
+───────────────────────────────────────── */
+
+@media (max-width: 390px) {
+
+    .filters {
+        bottom: 42px;
+        padding: 8px 10px;
+        gap: 4px;
+    }
+
+    .filters label {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+}
